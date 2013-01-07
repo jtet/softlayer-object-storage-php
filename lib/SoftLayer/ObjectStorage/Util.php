@@ -20,17 +20,17 @@ class ObjectStorage_Util
      *
      * @param string $className
      */
-    public static function __autoload_objectStorage_client($className)
-    {
-        $objectStorageDirectory = dirname(dirname(__FILE__));
-        set_include_path(get_include_path() . PATH_SEPARATOR . $objectStorageDirectory);
-
-        $directoryChunks = explode('_', $className);
-
-        $path = implode(DIRECTORY_SEPARATOR, $directoryChunks) . '.php';
-
-        require_once($path);
-    }
+//    public static function __autoload_objectStorage_client($className)
+//    {
+//        $objectStorageDirectory = dirname(dirname(__FILE__));
+//        set_include_path(get_include_path() . PATH_SEPARATOR . $objectStorageDirectory);
+//
+//        $directoryChunks = explode('_', $className);
+//
+//        $path = implode(DIRECTORY_SEPARATOR, $directoryChunks) . '.php';
+//
+//        require_once($path);
+//    }
 
     public static function getMimeByName($fileName = '')
     {

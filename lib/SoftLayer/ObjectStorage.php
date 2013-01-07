@@ -8,6 +8,9 @@ use SoftLayer\ObjectStorage\ObjectStorage_TokenStore;
 use SoftLayer\ObjectStorage\TokenStore\ObjectStorage_TokenStore_Interface;
 use SoftLayer\ObjectStorage\ObjectStorage_Abstract;
 use SoftLayer\ObjectStorage\Exception\ObjectStorage_Exception_Http;
+use SoftLayer\ObjectStorage\ObjectStorage_Container;
+use SoftLayer\ObjectStorage\ObjectStorage_Object;
+use SoftLayer\ObjectStorage\ObjectStorage_Util;
 
 /**
  * ObjectStorage object which represents a ObjectStorage cluster.
@@ -183,7 +186,7 @@ class ObjectStorage
 
         $response = $this->authenticate();
 
-        $authData = new stdClass();
+        $authData = new \stdClass();
         $authData->objectStorageUrl = $response->getHeader('X-storage-url');
         $authData->authToken = $response->getHeader('X-auth-token');
 

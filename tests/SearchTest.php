@@ -43,14 +43,14 @@ class SearchTest extends BaseTest
     public function testCreate()
     {
         $newContainer = self::$objectStorage->with(self::$newContainerName)->create();
-        $this->assertInstanceOf('ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newContainerName);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newContainerName);
 
         foreach (self::$newObjectNames as $name) {
             $object = self::$objectStorage->with($name)
             ->setMeta(self::$metaKey, self::$newObjectMeta)
             ->setBody(self::$newObjectBody)
             ->create();
-            $this->assertInstanceOf('ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
+            $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
         }
 
         sleep(15);
@@ -67,7 +67,7 @@ class SearchTest extends BaseTest
                                 ->setMime('json')
                                 ->get();
 
-        $this->assertInstanceOf('ObjectStorage_Abstract', $containers);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $containers);
 
         $containerCount = count($containers->containers);
         $mismatchCount = 0;
@@ -96,7 +96,7 @@ class SearchTest extends BaseTest
                                 ->setMime('json')
                                 ->get();
 
-        $this->assertInstanceOf('ObjectStorage_Abstract', $containers);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $containers);
 
         $this->assertEquals(1, $containers->getContainerCount(), 'There are ' . $containers->getContainerCount() . ' containers when expecting only one.');
     }
@@ -113,9 +113,9 @@ class SearchTest extends BaseTest
                                 ->setMime('json')
                                 ->get();
 
-        $this->assertInstanceOf('ObjectStorage_Abstract', $containers);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $containers);
 
-        $this->assertLessThan(count(self::$newObjectNames), $containers->getObjectCount(), 'There are ' . (int) $containers->getObjectCount() . ' objects when expecting larger than or equal to ' . count(self::$newObjectNames) . '.');
+        $this->assertGreaterThanOrEqual(count(self::$newObjectNames), $containers->getObjectCount(), 'There are ' . (int) $containers->getObjectCount() . ' objects when expecting larger than or equal to ' . count(self::$newObjectNames) . '.');
     }
 
     public function testDelete()
@@ -144,7 +144,7 @@ class SearchTest extends BaseTest
                             ->setMime('json')
                             ->get();
 
-        $this->assertInstanceOf('ObjectStorage_Abstract', $containers);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $containers);
 
         $this->assertEquals(0, $containers->getObjectCount(), 'There are ' . (int) $containers->getObjectCount() . ' objects when expecting 0.');
     }

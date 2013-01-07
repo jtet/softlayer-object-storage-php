@@ -37,7 +37,7 @@ class CdnContainerTest extends BaseTest
                             ->setTtl(self::$ttl)
                             ->create();
 
-        $this->assertInstanceOf('ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newCdnContainerName);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newCdnContainerName);
 
         $newObject = self::$objectStorage->with(self::$newObjectName)
                         ->setBody('Test file')

@@ -25,7 +25,7 @@ class ContainerTest extends BaseTest
     {
         $container = self::$objectStorage->with('/')->get();
 
-        $this->assertInstanceOf('ObjectStorage_Abstract', $container);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $container);
 
         $headers = $container->getHeaders();
 
@@ -47,7 +47,7 @@ class ContainerTest extends BaseTest
                             ->setMeta($metaKey, self::$newContainerMeta)
                             ->create();
 
-        $this->assertInstanceOf('ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newContainerName);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newContainerName);
 
         sleep(1);
 

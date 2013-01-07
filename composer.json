@@ -8,7 +8,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "SoftLayer": "lib/" }
+        "classmap": ["lib/"]
     },
     "require": {
         "php": ">=5.2"

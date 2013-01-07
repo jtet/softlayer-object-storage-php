@@ -2,7 +2,6 @@
 namespace SoftLayer\ObjectStorage\Exception;
 
 use SoftLayer\ObjectStorage\ObjectStorage_Exception;
-use SoftLayer\ObjectStorage\ObjectStorage_Util;
 
 class ObjectStorage_Exception_Http extends ObjectStorage_Exception
 {
@@ -70,9 +69,9 @@ class ObjectStorage_Exception_Http extends ObjectStorage_Exception
             $message = $errorMessage;
         }
 
-        ObjectStorage_Util::__autoload_objectStorage_client($exception);
+        //ObjectStorage_Util::__autoload_objectStorage_client($exception);
         if (! class_exists($exception)) {
-            $exception = 'ObjectStorage_Exception';
+            $exception = 'SoftLayer\ObjectStorage\ObjectStorage_Exception';
         }
 
         $newException = new $exception($message);

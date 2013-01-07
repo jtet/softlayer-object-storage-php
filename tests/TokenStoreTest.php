@@ -16,6 +16,11 @@ class TokenStoreTest extends BaseTest
 
     public function testFileStore()
     {
+        $filePath = '/tmp/objectStorage_key_'.self::$key;
+        $fp = fopen($filePath, 'w');
+        fwrite($fp, '1');
+        fclose($fp);
+
         $tokenStore = ObjectStorage_TokenStore::factory('file', array('ttl' => 3600, 'path' => '/tmp/objectStorage'));
 
         $result = $tokenStore->set(self::$key, self::$testData);

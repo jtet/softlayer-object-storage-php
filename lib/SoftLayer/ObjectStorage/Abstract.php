@@ -3,6 +3,8 @@ namespace SoftLayer\ObjectStorage;
 
 use SoftLayer\ObjectStorage\ObjectStorage_Exception;
 use SoftLayer\ObjectStorage;
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Request;
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Response;
 
 /**
  * Abstract class for ObjectStorage_Container and ObjectStorage_Object.

@@ -39,14 +39,14 @@ class ObjectTest extends BaseTest
     public function testCreate()
     {
         $newContainer = self::$objectStorage->with(self::$newContainerName)->create();
-        $this->assertInstanceOf('ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newContainerName);
+        $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $newContainer, 'Failed to create new container: ' . self::$newContainerName);
 
         foreach (self::$newObjectNames as $name) {
             $object = self::$objectStorage->with($name)
                         ->setMeta(self::$metaKey, self::$newObjectMeta)
                         ->setBody(self::$newObjectBody)
                         ->create();
-            $this->assertInstanceOf('ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
+            $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
         }
 
         sleep(1);
@@ -70,7 +70,7 @@ class ObjectTest extends BaseTest
 
     public function testCreateFromFile()
     {
-        $result = @file_put_contents(self::$localFileName, str_repeat(rand(0,9), 1024*1024));
+        $result = file_put_contents(self::$localFileName, str_repeat(rand(0,9), 1024*1024));
         sleep(1);
 
         if ($result == false) {
@@ -80,7 +80,7 @@ class ObjectTest extends BaseTest
                         ->setLocalFile(self::$localFileName)
                         ->create();
 
-            $this->assertInstanceOf('ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
+            $this->assertInstanceOf('SoftLayer\ObjectStorage\ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
         }
 
         $copiedObject = self::$objectStorage->with(self::$copiedFileName)->getInfo();
