@@ -1,4 +1,9 @@
 <?php
+namespace SoftLayer\ObjectStorage;
+
+use SoftLayer\ObjectStorage\ObjectStorage_Abstract;
+use SoftLayer\ObjectStorage;
+
 /**
  * This class represents a ObjectStorage container.
  *

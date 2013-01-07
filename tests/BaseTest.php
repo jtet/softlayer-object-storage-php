@@ -1,9 +1,8 @@
 <?php
 
-$objectStorageDirectory = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'lib'. DIRECTORY_SEPARATOR . 'ObjectStorage';
-set_include_path(get_include_path() . PATH_SEPARATOR . $objectStorageDirectory);
-
-require_once($directory . 'Util.php');
+use SoftLayer\ObjectStorage\ObjectStorage_TokenStore;
+use SoftLayer\ObjectStorage;
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Client;
 
 class BaseTest extends PHPUnit_Framework_TestCase
 {

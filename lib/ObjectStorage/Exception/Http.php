@@ -1,4 +1,8 @@
 <?php
+namespace SoftLayer\ObjectStorage\Exception;
+
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
+use SoftLayer\ObjectStorage\ObjectStorage_Util;
 
 class ObjectStorage_Exception_Http extends ObjectStorage_Exception
 {

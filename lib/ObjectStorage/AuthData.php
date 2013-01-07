@@ -1,4 +1,6 @@
 <?php
+namespace SoftLayer\ObjectStorage;
+
 /**
  * This class holds a ObjectStorage URL and authentication token
  *

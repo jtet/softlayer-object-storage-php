@@ -1,6 +1,8 @@
 <?php
 require_once(dirname(__FILE__) . '/BaseTest.php');
 
+use SoftLayer\ObjectStorage\ObjectStorage_Abstract;
+
 class CdnContainerTest extends BaseTest
 {
     protected static $newObjectName = null;

@@ -1,0 +1,16 @@
+{
+    "name": "jtet/softlayer-object-storage",
+    "description": "SoftLayer Object Storage PHP Client",
+    "authors": [
+        {
+            "name": "jtet",
+            "email": "jtet.github@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "SoftLayer": "lib/" }
+    },
+    "require": {
+        "php": ">=5.2"
+    }
+}

@@ -1,4 +1,8 @@
 <?php
+namespace SoftLayer\ObjectStorage\Http;
+
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
+
 /**
  * ObjectStorage_Http_Abstract is the base class of a HTTP request and response classes.
  *

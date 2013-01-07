@@ -1,4 +1,10 @@
 <?php
+namespace SoftLayer\ObjectStorage;
+
+use SoftLayer\ObjectStorage\TokenStore\ObjectStorage_TokenStore_File;
+use SoftLayer\ObjectStorage\TokenStore\ObjectStorage_TokenStore_Memory;
+use SoftLayer\ObjectStorage\Exception\ObjectStorage_Exception_TokenStore;
+
 /**
  * ObjectStorage token store
  * A token store is a place that ObjectStorage can store ObjectStorage authentication token for reusing it.

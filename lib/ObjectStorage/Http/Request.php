@@ -1,4 +1,8 @@
 <?php
+namespace SoftLayer\ObjectStorage\Http;
+
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Abstract;
+
 /**
  * ObjectStorage_Http_Request contains a HTTP request data.
  *

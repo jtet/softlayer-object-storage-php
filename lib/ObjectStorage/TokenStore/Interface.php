@@ -1,4 +1,6 @@
 <?php
+namespace SoftLayer\ObjectStorage\TokenStore;
+
 /**
 * ObjectStorage token store interface
 *

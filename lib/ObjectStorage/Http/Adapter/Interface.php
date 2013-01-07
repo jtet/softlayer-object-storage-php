@@ -1,4 +1,6 @@
 <?php
+namespace SoftLayer\ObjectStorage\Http\Adapter;
+
 /**
  * Interface for ObjectStorage REST client adpater class
  *

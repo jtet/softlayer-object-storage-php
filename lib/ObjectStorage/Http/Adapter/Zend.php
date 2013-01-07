@@ -1,4 +1,10 @@
 <?php
+namespace SoftLayer\ObjectStorage\Http\Adapter;
+
+use SoftLayer\ObjectStorage\Http\Adapter\ObjectStorage_Http_Adapter_Interface;
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Response;
+
 /**
 * ObjectStorage_Http_Client that uses Zend_HTTP_Client.
 * If your server doesn't support CURL and you're already using Zend, this adapter could be used.
@@ -15,7 +21,7 @@ class ObjectStorage_Http_Adapter_Zend implements ObjectStorage_Http_Adapter_Inte
 
     public function __construct($options = array())
     {
-        $this->client = new Zend_Http_Client();
+        $this->client = new \Zend_Http_Client();
 
         if (isset($options['timeout']) && is_numeric($options['timeout'])) {
             $this->timeout = $options['timeout'];
@@ -58,7 +64,7 @@ class ObjectStorage_Http_Adapter_Zend implements ObjectStorage_Http_Adapter_Inte
     {
         $requiredVersion = '1.10';
 
-        if (Zend_Version::compareVersion($requiredVersion) >= 1) {
+        if (\Zend_Version::compareVersion($requiredVersion) >= 1) {
             throw new ObjectStorage_Exception('Zend HTTP clien\'s data streaming upload requires Zend framework version ' . $requiredVersion . ' or greater.');
         }
         $this->client->setRawData($handler);

@@ -1,4 +1,7 @@
 <?php
+namespace SoftLayer\ObjectStorage;
+
+
 /**
  * ObjectStorage base exception
  *
@@ -7,7 +10,7 @@
  * @package ObjectStorage-Client
  * @copyright  Copyright (c) 2012 SoftLayer Technologies Inc. (http://www.softlayer.com)
  */
-class ObjectStorage_Exception extends Exception
+class ObjectStorage_Exception extends \Exception
 {
     /**
      * Sets the file name of which an exception is thrown

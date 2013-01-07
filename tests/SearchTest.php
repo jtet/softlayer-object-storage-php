@@ -1,6 +1,8 @@
 <?php
 require_once(dirname(__FILE__) . '/BaseTest.php');
 
+use SoftLayer\ObjectStorage\ObjectStorage_Abstract;
+
 class SearchTest extends BaseTest
 {
     protected static $containerToSearch = null;
@@ -34,8 +36,8 @@ class SearchTest extends BaseTest
         }
 
         self::$metaKey = 'search-test';
-        self::$newObjectMeta = 'doremipasolrasido';
-        self::$newObjectBody = 'SoftLayer technologies. Object Stroage test file.';
+        self::$newObjectMeta = 'doremifasolatido';
+        self::$newObjectBody = 'SoftLayer technologies. Object Strorage test file.';
     }
 
     public function testCreate()

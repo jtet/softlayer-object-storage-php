@@ -1,4 +1,9 @@
 <?php
+namespace SoftLayer\ObjectStorage\TokenStore;
+
+use SoftLayer\ObjectStorage\TokenStore\ObjectStorage_TokenStore_Interface;
+use SoftLayer\ObjectStorage\Exception\ObjectStorage_Exception_TokenStore;
+
 /**
  * This token store utilized a temporary file to store ObjectStorage authentication data
  *

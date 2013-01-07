@@ -1,4 +1,13 @@
 <?php
+namespace SoftLayer;
+
+use SoftLayer\ObjectStorage\Exception\ObjectStorage_Exception_Authentication;
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Client;
+use SoftLayer\ObjectStorage\ObjectStorage_AuthData;
+use SoftLayer\ObjectStorage\ObjectStorage_TokenStore;
+use SoftLayer\ObjectStorage\TokenStore\ObjectStorage_TokenStore_Interface;
+use SoftLayer\ObjectStorage\ObjectStorage_Abstract;
+use SoftLayer\ObjectStorage\Exception\ObjectStorage_Exception_Http;
 
 /**
  * ObjectStorage object which represents a ObjectStorage cluster.

@@ -1,4 +1,9 @@
 <?php
+namespace SoftLayer\ObjectStorage\Http;
+
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Abstract;
+
 /**
  * ObjectStorage_Http_Response contains a HTTP response data.
  *

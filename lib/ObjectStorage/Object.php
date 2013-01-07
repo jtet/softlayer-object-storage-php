@@ -1,4 +1,8 @@
 <?php
+namespace SoftLayer\ObjectStorage;
+
+use SoftLayer\ObjectStorage\ObjectStorage_Abstract;
+
 /**
  * This class represents a ObjectStorage object.
  *
@@ -66,7 +70,7 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
         try {
             $this->request->setHeader('X-Cdn-Purge', 'true');
             $this->objectStorage->update($this);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             $this->objectStorage->update($this);
         }
@@ -84,7 +88,7 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
         try {
             $this->request->setHeader('X-Cdn-Load', 'true');
             $this->objectStorage->update($this);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             $this->objectStorage->update($this);
         }

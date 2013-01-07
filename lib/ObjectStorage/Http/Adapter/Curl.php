@@ -1,4 +1,10 @@
 <?php
+namespace SoftLayer\ObjectStorage\Http\Adapter;
+
+use SoftLayer\ObjectStorage\Http\Adapter\ObjectStorage_Http_Adapter_Interface;
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
+use SoftLayer\ObjectStorage\Http\ObjectStorage_Http_Response;
+
 /**
 * ObjectStorage_Http_Client that uses CURL
 *

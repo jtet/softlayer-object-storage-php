@@ -1,4 +1,8 @@
 <?php
+namespace SoftLayer\ObjectStorage\TokenStore;
+
+use SoftLayer\ObjectStorage\TokenStore\ObjectStorage_TokenStore_Interface;
+
 /**
  * A temporary token store that uses memory as token storage.
  * This is NOT a persistent data store nor it's anywhere close to memcache.

@@ -1,4 +1,8 @@
 <?php
+namespace SoftLayer\ObjectStorage;
+
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
+use SoftLayer\ObjectStorage;
 
 /**
  * Abstract class for ObjectStorage_Container and ObjectStorage_Object.
@@ -393,7 +397,7 @@ abstract class ObjectStorage_Abstract
     public function setFilter($key, $value)
     {
         if ($this->context != ObjectStorage_Abstract::CONTEXT_SEARCH) {
-            throw new ObjectStorage_Exception('Filter can be set within the "search" contenxt.');
+            throw new ObjectStorage_Exception('Filter can be set within the "search" context.');
         }
 
         // @todo Validate $key
@@ -520,7 +524,7 @@ abstract class ObjectStorage_Abstract
     {
         try {
             return $this->objectStorage->getCdnUrls($this);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->getCdnUrls($this);
         }
@@ -542,7 +546,7 @@ abstract class ObjectStorage_Abstract
 
         try {
             return $this->objectStorage->get($this);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->get($this);
         }
@@ -557,7 +561,7 @@ abstract class ObjectStorage_Abstract
     {
         try {
             return $this->objectStorage->get($this, false);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->get($this, false);
         }
@@ -572,7 +576,7 @@ abstract class ObjectStorage_Abstract
     {
         try {
             return $this->objectStorage->create($this);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->create($this);
         }
@@ -587,7 +591,7 @@ abstract class ObjectStorage_Abstract
     {
         try {
             return $this->objectStorage->update($this);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->update($this);
         }
@@ -602,7 +606,7 @@ abstract class ObjectStorage_Abstract
     {
         try {
             return $this->objectStorage->delete($this);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->delete($this);
         }

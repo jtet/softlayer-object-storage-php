@@ -1,9 +1,10 @@
 <?php
+namespace SoftLayer\ObjectStorage;
 
 /**
  * Registering auto loader
  */
-spl_autoload_register('ObjectStorage_Util::__autoload_objectStorage_client');
+//spl_autoload_register('ObjectStorage_Util::__autoload_objectStorage_client');
 
 /**
  * ObjectStorage client utility class
@@ -95,7 +96,7 @@ class ObjectStorage_Util
         } else if (isset($mimeTypes[$extension])) {
             return $mimeTypes[$extension];
         } else if (function_exists('mime_content_type')) {
-            return mime_content_type($filename);
+            return mime_content_type($fileName);
         } else {
             return 'application/octet-stream';
         }

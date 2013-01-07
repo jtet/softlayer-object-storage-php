@@ -1,4 +1,12 @@
 <?php
+namespace SoftLayer\ObjectStorage\Http;
+
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
+use SoftLayer\ObjectStorage\Http\Adapter\ObjectStorage_Http_Adapter_Curl;
+use SoftLayer\ObjectStorage\Http\Adapter\ObjectStorage_Http_Adapter_Socket;
+use SoftLayer\ObjectStorage\Http\Adapter\ObjectStorage_Http_Adapter_Zend;
+use SoftLayer\ObjectStorage\Http\Adapter\ObjectStorage_Http_Adapter_Interface;
+
 /**
  * ObjectStorage_Http_Client communicates with ObjectStorage clusters via ObjectStorage REST API.
  *
