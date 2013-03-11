@@ -11,6 +11,7 @@ use SoftLayer\ObjectStorage\Exception\ObjectStorage_Exception_Http;
 use SoftLayer\ObjectStorage\ObjectStorage_Container;
 use SoftLayer\ObjectStorage\ObjectStorage_Object;
 use SoftLayer\ObjectStorage\ObjectStorage_Util;
+use SoftLayer\ObjectStorage\ObjectStorage_Exception;
 
 /**
  * ObjectStorage object which represents a ObjectStorage cluster.
